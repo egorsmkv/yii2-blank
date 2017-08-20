@@ -7,6 +7,11 @@ A simple Yii 2 project with Twig template engine.
 
 ##### 0) [Install Composer][0]
 
+##### 0.1) Create folders:
+
+- runtime
+- web/assets
+
 ##### 1) Set [chmod][1] permissions - 0777 on folders:
 
 - runtime
