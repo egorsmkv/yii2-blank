@@ -1,0 +1,11 @@
+.idea/
+
+vendor/
+
+runtime/*
+web/assets/*
+
+composer.lock
+composer.phar
+
+*.log

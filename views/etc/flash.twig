@@ -1,0 +1,19 @@
+{% set flashMessages = app.session.getAllFlashes() %}
+
+{% if flashMessages %}
+
+    <div class="container">
+
+        {% for k,v in flashMessages %}
+            {% if k == 'error' %}
+                {% set className = 'danger' %}
+            {% elseif k == 'success' %}
+                {% set className = 'success' %}
+            {% endif %}
+
+            <div class="alert alert-{{ className }}">{{ v }}</div>
+        {% endfor %}
+
+    </div>
+
+{% endif %}
