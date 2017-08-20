@@ -42,6 +42,12 @@ Apache:
 </VirtualHost>
 ```
 
+Or run internal web server:
+
+```
+php ./yii serve
+```
+
 ##### 3) Install third party libraries
 
 ```

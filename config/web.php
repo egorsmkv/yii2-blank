@@ -7,7 +7,7 @@ $db = require __DIR__ . '/db.php';
 $routes = require __DIR__ . '/routes.php';
 
 $config = [
-    'language' => 'ru-RU',
+    'language' => 'en-US',
     'id' => 'app-web',
     'basePath' => $basePath,
     'bootstrap' => ['log'],
