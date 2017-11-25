@@ -1,11 +1,11 @@
 <?php
 
-// Connection settings to database
+use yii\db\Connection;
 
 // DEBUG
 if (YII_DEBUG) {
     return [
-        'class' => 'yii\db\Connection',
+        'class' => Connection::class,
         'dsn' => 'mysql:host=localhost;dbname=placehold',
         'username' => 'root',
         'password' => 'root',
@@ -15,7 +15,7 @@ if (YII_DEBUG) {
 
 // PRODUCTION
 return [
-    'class' => 'yii\db\Connection',
+    'class' => Connection::class,
     'dsn' => 'mysql:host=localhost;dbname=',
     'username' => '',
     'password' => '',

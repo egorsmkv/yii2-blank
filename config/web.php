@@ -1,5 +1,16 @@
 <?php
 
+use yii\web\View;
+use yii\web\JqueryAsset;
+use yii\helpers\Html;
+use yii\caching\FileCache;
+use yii\log\FileTarget;
+use yii\twig\ViewRenderer;
+use yii\debug\Module as DebugModule;
+use yii\gii\Module as GiiModule;
+use yii\bootstrap\BootstrapAsset;
+use yii\bootstrap\BootstrapPluginAsset;
+
 $basePath = dirname(__DIR__);
 
 $params = require __DIR__ . '/params.php';
@@ -14,22 +25,22 @@ $config = [
     'components' => [
         'assetManager' => [
             'bundles' => [
-                'yii\web\JqueryAsset' => false,
-                'yii\bootstrap\BootstrapPluginAsset' => false,
-                'yii\bootstrap\BootstrapAsset' => false
+                JqueryAsset::class => false,
+                BootstrapPluginAsset::class => false,
+                BootstrapAsset::class => false
             ],
         ],
         'view' => [
-            'class' => 'yii\web\View',
+            'class' => View::class,
             'renderers' => [
                 'twig' => [
-                    'class' => 'yii\twig\ViewRenderer',
+                    'class' => ViewRenderer::class,
                     'cachePath' => '@runtime/Twig/cache',
                     'options' => [
                         'auto_reload' => true,
                     ],
                     'globals' => [
-                        'html' => '\yii\helpers\Html',
+                        'html' => Html::class,
                     ],
                     'uses' => ['yii\bootstrap'],
                 ],
@@ -39,7 +50,7 @@ $config = [
             'cookieValidationKey' => $params['cookieValidationKey']
         ],
         'cache' => [
-            'class' => 'yii\caching\FileCache'
+            'class' => FileCache::class
         ],
         'errorHandler' => [
             'errorAction' => 'site/error'
@@ -48,7 +59,7 @@ $config = [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class' => FileTarget::class,
                     'levels' => ['error', 'warning']
                 ]
             ]
@@ -61,18 +72,18 @@ $config = [
             'rules' => $routes
         ],
     ],
-    'params' => $params
+    'params' => $params,
 ];
 
 if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
-        'class' => 'yii\debug\Module',
+        'class' => DebugModule::class,
     ];
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
-        'class' => yii\gii\Module::className(),
+        'class' => GiiModule::class,
     ];
 }
 

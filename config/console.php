@@ -1,5 +1,8 @@
 <?php
 
+use yii\log\FileTarget;
+use yii\caching\FileCache;
+
 $basePath = dirname(__DIR__);
 
 Yii::setAlias('@webroot', $basePath . '/web');
@@ -15,12 +18,12 @@ $config = [
     'controllerNamespace' => 'app\commands',
     'components' => [
         'cache' => [
-            'class' => 'yii\caching\FileCache'
+            'class' => FileCache::class
         ],
         'log' => [
             'targets' => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class' => FileTarget::class,
                     'levels' => ['error', 'warning']
                 ],
             ],

@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use yii\web\ErrorAction;
+
 /**
  * Main controller
  *
@@ -18,7 +20,7 @@ class SiteController extends BaseController
     {
         return [
             'error' => [
-                'class' => 'yii\web\ErrorAction',
+                'class' => ErrorAction::class,
                 'view' => '/etc/error.twig'
             ],
         ];
@@ -28,6 +30,7 @@ class SiteController extends BaseController
      * Index page
      *
      * @return string
+     * @throws \yii\base\InvalidParamException
      */
     public function actionIndex()
     {
