@@ -1,8 +1,8 @@
 {{ set(this, 'title', name) }}
 
-<div class="container">
+<div class="container-fluid mt-3">
+    <h1 class="h4">{{ this.title }}</h1>
     <div class="alert alert-warning">
-        <b>{{ this.title }}</b>
-        <p>{{ message|nl2br }}</p>
+        {{ message|nl2br }}
     </div>
 </div>

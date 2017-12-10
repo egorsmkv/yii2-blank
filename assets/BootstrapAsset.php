@@ -14,5 +14,6 @@ class BootstrapAsset extends AssetBundle
     ];
     public $depends = [
         JQueryAsset::class,
+        PopperAsset::class,
     ];
 }
