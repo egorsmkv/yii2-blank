@@ -14,7 +14,7 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'app-console',
     'basePath' => $basePath,
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'gii'],
     'controllerNamespace' => 'app\commands',
     'components' => [
         'cache' => [
@@ -31,7 +31,12 @@ $config = [
         'db' => $db
     ],
     'params' => $params,
-    'controllerMap' => []
+    'controllerMap' => [],
+    'modules' => [
+        'gii' => [
+            'class' => yii\gii\Module::className(),
+        ]
+    ]
 ];
 
 return $config;
