@@ -7,20 +7,16 @@ A simple Yii 2 project with Twig template engine.
 
 If you don't have the Composer on your system, you must [install][0] it.
 
-##### 1) Create these folders:
+##### 1) Set [chmod][1] permissions (0777 mode) on folders:
 
 - runtime
 - web/assets
 
-##### 2) Set [chmod][1] permissions (0777 mode) on folders:
-
-- runtime
-- web/assets
-
-Or run this command:
+##### 2) Install third party libraries
 
 ```
-composer make_chmod
+composer global require "fxp/composer-asset-plugin:v1.3.1"
+composer install
 ```
 
 ##### 3) Configure a web server, e.g.:
@@ -48,14 +44,7 @@ Or run the Yii's internal web server:
 php ./yii serve
 ```
 
-##### 4) Install third party libraries
-
-```
-composer global require "fxp/composer-asset-plugin:v1.3.1"
-composer install
-```
-
-##### 5) Done!
+##### 4) Done!
 
 Configure app settings in ``config/params.php`` file.
 
