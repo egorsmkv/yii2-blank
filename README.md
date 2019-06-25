@@ -15,7 +15,7 @@ If you don't have the Composer on your system, you must [install][0] it.
 ##### 2) Install third party libraries
 
 ```
-composer global require "fxp/composer-asset-plugin:v1.3.1"
+composer global require "fxp/composer-asset-plugin:v1.4.5"
 composer install
 ```
 

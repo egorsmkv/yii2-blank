@@ -6,21 +6,19 @@
   "authors": [
     {
       "name": "Yehor Smoliakov",
-      "email": "egorsmkv@gmail.com",
-      "homepage": "https://yehor.net",
+      "email": "yehors@ukr,net",
       "role": "Developer"
     }
   ],
   "require": {
     "php": ">=5.6.0",
-    "yiisoft/yii2": "2.0.15.1",
-    "yiisoft/yii2-bootstrap": "2.0.8",
-    "yiisoft/yii2-twig": "2.2.0",
-    "yidas/yii2-composer-bower-skip": "2.0.13"
+    "yiisoft/yii2": "2.0.21",
+    "yiisoft/yii2-bootstrap": "2.0.10",
+    "yiisoft/yii2-twig": "2.2.1"
   },
   "require-dev": {
-    "yiisoft/yii2-debug": "2.0.13",
-    "yiisoft/yii2-gii": "2.0.6"
+    "yiisoft/yii2-debug": "2.1.5",
+    "yiisoft/yii2-gii": "2.1.0"
   },
   "config": {
     "process-timeout": 1800,
